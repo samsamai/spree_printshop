@@ -1,3 +1,6 @@
 /*
  *= require store/spree_frontend
 */
+.cart-item-filename {
+  text-align:center;
+}

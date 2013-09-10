@@ -1,11 +1,18 @@
 Spree::OrderPopulator.class_eval do
     def populate(from_hash)
+      
+      if from_hash[:order] == nil
+        uploaded_file = nil
+      else
+        uploaded_file =  from_hash[:order][:upf]
+      end
+      
       from_hash[:products].each do |product_id,variant_id|
-        attempt_cart_add(variant_id, from_hash[:quantity],  from_hash[:order][:upf] )
+        attempt_cart_add(variant_id, from_hash[:quantity],  uploaded_file )
       end if from_hash[:products]
     
       from_hash[:variants].each do |variant_id, quantity|
-        attempt_cart_add(variant_id, quantity, from_hash[:order][:upf])
+        attempt_cart_add(variant_id, quantity, uploaded_file)
       end if from_hash[:variants]
      
       valid?

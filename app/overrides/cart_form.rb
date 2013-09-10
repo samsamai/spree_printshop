@@ -1,5 +1,5 @@
 Deface::Override.new(:virtual_path  => "spree/products/_cart_form",
-                     :replace => "erb[loud]:contains('form_for :order')",
+                     :replace => "code[erb-loud]:contains('form_for :order')",
                      :text          => "<%= form_for :order, :url => populate_orders_path, :html => { :multipart => true } do |f| %>",
                      :name  => "multi_form_for")
                      
