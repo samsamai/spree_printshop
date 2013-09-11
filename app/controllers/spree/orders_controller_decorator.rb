@@ -4,7 +4,7 @@ Spree::OrdersController.class_eval do
   def populate
     populator = Spree::OrderPopulator.new(current_order(true), current_currency)
     if populator.populate(params.slice(:products, :variants, :quantity, :order ))
-      current_order.ensure_updated_shipments if current_order.shipments.any?
+      current_order.create_proposed_shipments if current_order.shipments.any?
   
       fire_event('spree.cart.add')
       fire_event('spree.order.contents_changed')
@@ -18,5 +18,3 @@ Spree::OrdersController.class_eval do
   end
 
 end
-
-

@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_printshop'
-  s.version     = '2.0.4'
+  s.version     = '0.0.1'
   s.summary     = 'Spree-printshop'
   s.description = 'Spree extension for online printshops'
   s.required_ruby_version = '>= 1.9.3'
