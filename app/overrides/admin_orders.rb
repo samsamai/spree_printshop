@@ -2,7 +2,7 @@ Deface::Override.new(:virtual_path => "spree/admin/orders/_shipment_manifest",
                      :name => "replace_quantity_with_filename",
                      :replace_contents => "td.item-qty-show",
                      :text => <<eos
-<%= line_item.upf_filename %>
+<%= link_to line_item.upf_filename, line_item.upf.url %>
 eos
 )            
 
