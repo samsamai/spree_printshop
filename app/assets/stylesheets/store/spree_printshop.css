@@ -4,3 +4,7 @@
 .cart-item-filename {
   text-align:center;
 }
+
+#taxon-crumbs {
+  display:none
+}

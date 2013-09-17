@@ -12,9 +12,13 @@ Spree::OrderPopulator.class_eval do
       end if from_hash[:products]
     
       from_hash[:variants].each do |variant_id, quantity|
+        # Rails.logger.debug( "!!!!!!!!!! variant_id = #{variant_id}" )
         attempt_cart_add(variant_id, quantity, uploaded_file)
       end if from_hash[:variants]
-     
+      # Rails.logger.debug( "from_hash = #{from_hash}" )
+      # Rails.logger.debug( "from_hash[:products] = #{from_hash[:products]}" )
+      # Rails.logger.debug( "from_hash[:variants] = #{from_hash[:variants]}" )
+           
       valid?
     end
     

@@ -11,7 +11,7 @@ Spree::OrderContents.class_eval do
     private
     
     def add_to_line_item(line_item, variant, quantity, currency=nil, shipment=nil, uploaded_file)
-
+      
       line_item = order.line_items.new(quantity: quantity, variant: variant)
       line_item.target_shipment = shipment
       if currency
@@ -22,6 +22,7 @@ Spree::OrderContents.class_eval do
       end
     
       line_item.upf = uploaded_file
+      
       line_item.save
       order.reload
       line_item

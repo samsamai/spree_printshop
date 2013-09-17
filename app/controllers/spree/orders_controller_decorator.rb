@@ -2,8 +2,11 @@ Spree::OrdersController.class_eval do
   # Adds a new item to the order (creating a new order if none already exists)
   # add uploaded file facility
   def populate
+    
     populator = Spree::OrderPopulator.new(current_order(true), current_currency)
     if populator.populate(params.slice(:products, :variants, :quantity, :order ))
+      
+    # if populator.populate(params)
       current_order.create_proposed_shipments if current_order.shipments.any?
   
       fire_event('spree.cart.add')

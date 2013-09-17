@@ -2,11 +2,13 @@ Spree::ProductsController.class_eval do
   def show
     return unless @product
 
-    @variants = @product.variants.active(current_currency).includes([:option_values, :images])
+    @variants = @product.variants_including_master.active(current_currency).includes([:option_values, :images])
+    sp_variants = @product.variants.active(current_currency).includes([:option_values, :images])
     @product_properties = @product.product_properties.includes(:property)
 
+    # Make an array of hashes with the option values + price, id
     @combi = Array.new   
-    @variants.each do |v|
+    sp_variants.each do |v|
       values = v.option_values.joins(:option_type).order("#{Spree::OptionType.table_name}.position asc")
 
       variant_options_hash = Hash.new
@@ -14,10 +16,13 @@ Spree::ProductsController.class_eval do
         variant_options_hash[ov.option_type.presentation] = ov.presentation
         add_value_to_options( ov.option_type.presentation, ov.presentation)
       end
-      variant_options_hash['Price'] = v.price
+      
+      variant_options_hash['Price'] = v.price_in(current_currency).display_price.to_s
+      variant_options_hash['id'] = v.id
       
       @combi << variant_options_hash
     end
+    # Rails.logger.debug( "DEBUG: @combi = #{@combi}" )
     
     # Pass combination data to js via gon
     gon.combi = @combi
