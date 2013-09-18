@@ -8,7 +8,7 @@ Spree::LineItem.class_eval do
                       url: '/spree/uploads/:id/:basename.:extension',
                       path: ':rails_root/public/spree/uploads/:id/:basename.:extension'
 
-    #validates :upf, :attachment_presence => {:message => "Error: please select your artwork file to upload"}
+    validates :upf, :attachment_presence => {:message => "Error: please select your artwork file to upload"}
     # validates :upf, :attachment_content_type => ['application/pdf']
 
       # validates_attachment :upf, :presence => true,
