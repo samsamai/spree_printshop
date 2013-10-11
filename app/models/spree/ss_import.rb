@@ -2,8 +2,6 @@ require 'spreadsheet'
 
 Spreadsheet.client_encoding = 'UTF-8'
 
-
-
 class Spree::SS_Import
 
 @@combi_data = [ 
@@ -250,26 +248,26 @@ class Spree::SS_Import
   ["Folded Brochures", 15, 25, 10000, "Brochures", { Size: "6 page A4", "Double sided" => "Yes", Paper: "150 gsm Recycled Satin Artpaper" }],
 
   ["A3 Flyers", 1, 50, 100, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "100 gsm" }],
-  #["A3 Flyers", 2, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "115 gsm" }],
-  #["A3 Flyers", 3, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "150 gsm" }],
-  #["A3 Flyers", 4, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "170 gsm" }],
-  #["A3 Flyers", 5, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "250 gsm" }],
-  #["A3 Flyers", 6, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "310 gsm" }],
-  #["A3 Flyers", 8, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "100 gsm" }],
-  #["A3 Flyers", 9, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "115 gsm" }],
-  #["A3 Flyers", 10, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "150 gsm" }],
-  #["A3 Flyers", 11, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "170 gsm" }],
-  #["A3 Flyers", 12, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "250 gsm" }],
-  #["A3 Flyers", 13, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "310 gsm" }],
-  #["A3 Flyers", 15, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "100 gsm Recycled" }],
-  #["A3 Flyers", 16, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "120 gsm Recycled uncoated" }],
-  #["A3 Flyers", 17, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "150 gsm Recycled Satin Artpaper" }],
-  #["A3 Flyers", 18, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "250 gsm Recycled Satin Artpaper" }],
-  #["A3 Flyers", 19, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "310 gsm Recycled uncoated Artboard" }],
-  #["A3 Flyers", 20, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "100 gsm Recycled" }],
-  #["A3 Flyers", 21, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "120 gsm Recycled uncoated" }],
-  #["A3 Flyers", 22, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "150 gsm Recycled Satin Artpaper" }],
-  #["A3 Flyers", 23, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "250 gsm Recycled Satin Artpaper" }],
+  ["A3 Flyers", 2, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "115 gsm" }],
+  ["A3 Flyers", 3, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "150 gsm" }],
+  ["A3 Flyers", 4, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "170 gsm" }],
+  ["A3 Flyers", 5, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "250 gsm" }],
+  ["A3 Flyers", 6, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "310 gsm" }],
+  ["A3 Flyers", 8, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "100 gsm" }],
+  ["A3 Flyers", 9, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "115 gsm" }],
+  ["A3 Flyers", 10, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "150 gsm" }],
+  ["A3 Flyers", 11, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "170 gsm" }],
+  ["A3 Flyers", 12, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "250 gsm" }],
+  ["A3 Flyers", 13, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "310 gsm" }],
+  ["A3 Flyers", 15, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "100 gsm Recycled" }],
+  ["A3 Flyers", 16, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "120 gsm Recycled uncoated" }],
+  ["A3 Flyers", 17, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "150 gsm Recycled Satin Artpaper" }],
+  ["A3 Flyers", 18, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "250 gsm Recycled Satin Artpaper" }],
+  ["A3 Flyers", 19, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "No", Paper: "310 gsm Recycled uncoated Artboard" }],
+  ["A3 Flyers", 20, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "100 gsm Recycled" }],
+  ["A3 Flyers", 21, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "120 gsm Recycled uncoated" }],
+  ["A3 Flyers", 22, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "150 gsm Recycled Satin Artpaper" }],
+  ["A3 Flyers", 23, 50, 10000, "Flyers", { Size: "A3", "Double sided" => "Yes", Paper: "250 gsm Recycled Satin Artpaper" }],
  
   ["A4 Flyers", 1, 50, 10000, "Flyers", { Size: "A4", "Double sided" => "No", Paper: "100 gsm" }],
   ["A4 Flyers", 2, 50, 10000, "Flyers", { Size: "A4", "Double sided" => "No", Paper: "115 gsm" }],
@@ -492,8 +490,6 @@ class Spree::SS_Import
   ["Bookmarks", 10, 0, 10000, "Bookmarks", { Size: "55x250", "Double sided" => "Yes", "Lamination" => "Front & Back"}]
 
          ]
-       
-
 
   def persisted?
     false
@@ -511,10 +507,10 @@ class Spree::SS_Import
     def import_file(file)
 
       result = false
-      # begin
+      begin
         @book = Spreadsheet.open file
     
-        only_do_product = "Flyers"
+        only_do_product = "Calendars"
         if only_do_product != nil
           @@combi_data = @@combi_data.find_all{|item| item[4] == only_do_product }
         end
@@ -524,9 +520,6 @@ class Spree::SS_Import
         @@combi_data.each do |combi|
           @product_names[ combi[4] ] = 1
         end
-        #       
-        # # clear the products
-        # clear_products product_names
         
         # Generate the combinations
         @@combi_data.each do |combi|
@@ -544,80 +537,62 @@ class Spree::SS_Import
           make_combi
         end
 
-        result = 1
-        # sku = "002" + Random.rand(100).to_s
-        # ssattr = { name: "Test7"+ Random.rand(100).to_s, sku: sku, price: 22, shipping_category_id: 1}
-
-        # #p = Spree::Product.new( ssattr )
-        # # set option types , option_type_ids: [3,4] 
-        # #p.option_type_ids = [3,4]
-        # # p.variant_ids = [41,42]
-
-        # #option_values_hash["Qty"] = [1,2]
-        # #p.option_values_hash = option_values_hash
-        # tax_category = Spree::TaxCategory.where("name = ?", "MVA").first
+        sort_option_values
         
-        # p = create_or_update_product( "002" + Random.rand(100).to_s , "name" + Random.rand(100).to_s, "desc", Time.now.to_s, "100",
-        # nil,nil,nil,nil,nil,nil,tax_category,nil )
-        
-        # option_type = Spree::OptionType.find_by_name( "QTT" )
-        # if !option_type
-        #   option_type = Spree::OptionType.create( name: "QTT", presentation: "QTT" )
-        # end
-        
-        # # option_value = Spree::OptionValue.find_by_name( "22" )
-        # # if !option_value
-        # #   option_value = Spree::OptionValue.create( :name => "22", :presentation => "22" )
-        # #   option_type.option_values << option_value
-        # #   option_type.save
-        # # end
-        
-        # option_value = option_type.option_values.find_by_name( "22" )
-        # if !option_value
-        #   option_value = Spree::OptionValue.create( :name => "22", :presentation => "22" )
-        #   option_type.option_values << option_value
-        #   option_type.save
-        # end
-
-        # # option_value = Spree::OptionValue.create( {:name => "22", :presentation => "22", :option_type => "Qty"}, :without_protection => true )
-        # # variant = Spree::Variant.create( :product => p ) # create the new variant
-        # # variant.option_values << option_type.option_values[0] # add the option value
-        # # p.variants << variant #add the variant (not sure if needed)
-        
-        # # p.master = Spree::Variant.new(
-        # #     :sku => sku
-        # # )
-        # # default_price = Spree::Price.new(
-        # # )
-        # # p.master.default_price = default_price
-
-        # #p.variants[] = Spree::Variant.create
-        # p.option_types << option_type
-        # v = Spree::Variant.new( price: "202")
-        # v.option_values << option_type.option_values
-        
-        # p.variants << v
-        
-        # p.save
-    
-        
-        # Spree::Product.transaction do
-        #   spreadsheet = CSV.read(file.path, headers: true)
-        #   result = spreadsheet.size
-          
-          # spreadsheet.each do |row|
-         #    attrs = row.to_hash.symbolize_keys
-         #    raise if (attrs[:sku].blank? || attrs[:price].blank?)
-         #    attrs[:available_on] = Time.parse(attrs[:available_on]) unless attrs[:available_on].blank?
-         #    Spree::Product.create!(attrs)
-         #  end
-        # end
+        result = "Import successful! " + @products_created + " products created, " + @variants_created + " variants created."
         return result
-      # rescue
-      #   return false
-      # end
+      rescue
+        return false
+      end
     end
 
+    def sort_option_values
+      option_types =  Spree::OptionType.all
+      option_types.each do |option_type|
+        option_values = Spree::OptionValue.where( :option_type_id => option_type.id)
+        my_hash = Hash.new
+        option_values.each do |ov|
+          my_hash[ov.id] = ov.presentation
+        end
+        
+        my_hash = my_hash.sort_by { |k, v| v.to_i }
+
+        # write position values
+        pos = 1;
+        my_hash.each do |key, value|
+          ov = Spree::OptionValue.where( id: key).first
+          ov.position = pos
+          ov.save
+          pos = pos + 1
+        end     
+      end      
+      # # sort quantities
+      # q = "SELECT name, ps_attribute.id_attribute
+      #     FROM ps_attribute 
+      #     JOIN ps_attribute_lang 
+      #     ON ps_attribute.id_attribute = ps_attribute_lang.id_attribute
+      #     WHERE id_attribute_group = #{group_id}
+      #     "
+      #   
+      # my_hash = Hash.new
+      # rs = @con.query( q )
+      # rs.each_hash do |row|
+      #    my_hash[row['id_attribute']] = row['name'].to_i
+      # end      
+      # # puts "my hash : #{my_hash}"
+      # my_hash = my_hash.sort_by { |k, v| v }
+      # # puts "my hash sorted: #{my_hash}"
+      # # write position values
+      # pos = 0;
+      # my_hash.each do |key, value|
+      #   # puts "#{key} , #{value.to_i}"
+      #   q = "UPDATE ps_attribute SET position = #{pos} WHERE id_attribute = #{key}"
+      #   # puts "Query #{q}"
+      #   @con.query( q )
+      #   pos = pos + 1
+      # end     
+    end
+    
     def add_product( name )
       price = "10"
       sku = name
@@ -699,85 +674,21 @@ class Spree::SS_Import
     end
   
     def make_combi
-    
-      # get product id
-      #product_id = get_product_id( @product_name )
       tax_category = Spree::TaxCategory.where("name = ?", "MVA").first
-      
-      #product = create_or_update_product( Time.now.to_s , @product_name + Time.now.to_s, "desc", Time.now.to_s, "100", nil,nil,nil,nil,nil,nil,tax_category,nil )
-      
       product = add_product( @product_name )
-      Rails.logger.debug( "!!!!!!!!!! Create product #{@product_name}" )
-      # if product_id != nil
-      #   # print " product_id id = #{product_id}"
-      # else
-      #   # no such product
-      #   abort("Error: Product '#{@product_name}' not found")
-      # end
-
-      # clear_combination_data( product_id )
     
       i = get_table_index( @table_id ) + 3
       _qty = @sheet1[i,0].to_i
       while _qty != 0
         option_values = Array.new
         if (_qty >= @min_qty && _qty <= @max_qty)
-          Rails.logger.debug( "!!!!!!!!!! Qty: #{_qty}," )
           option_values << add_option( product, "Qty", _qty )
-          # add new product attribute
-          # product_attr_id = add_product_attr( product_id, @sheet1[i,1].to_i )
-          # # puts "added attribute with id = #{product_attr_id}"
-        
-          # # get attr group id
-          # qty_attr_group_id = get_attribute_group_id( "Quantity" )
-      
-          # if qty_attr_group_id == nil
-          #   #if doesn't exist create it
-          #   qty_attr_group_id = create_new_attr_group( "Quantity" )
-          # end
-          
-          # # puts "qty_attr_group_id = #{qty_attr_group_id}"
-          # #get attribute id for the quantity
-          # qty_attr_id = get_attribute_id( qty_attr_group_id, _qty )
-          # if qty_attr_id != nil
-          #   # print " qty_attribute_id = #{qty_attribute_id}"
-          # else
-          #   # create a new attribute
-          #   # abort("Error: Attribute for Qty '#{_qty}' not found")
-          #   qty_attr_id = create_new_qty_attr( _qty )
-          # end
 
           @combi_map.keys.each do |key|
-            #Rails.logger.debug( "!!!!!!!!!! #{key} #{@combi_map[key]}" )
-          
-
             option_values << add_option( product, key, @combi_map[key] )
-
-            # get attr group id
-            # attr_group_id = get_attribute_group_id( key )
-      
-            # if attr_group_id == nil
-            #   #if doesn't exist create it
-            #   attr_group_id = create_new_attr_group( key )
-            # end
-
-            # # get id of attribute
-            # attribute_id = get_attribute_id( attr_group_id, @combi_map[key] )
-            # if attribute_id != nil
-            #   # print " attribute id = #{attribute_id}"
-            # else
-            #   # create a new attribute
-            #   attribute_id = create_new_attr( key, @combi_map[key] )
-            #   # abort("Error: Attribute '#{@combi_map[key]}' not found")
-            # end
-          
-            #  # add new product attr combination
-            # add_product_attr_combi( product_attr_id, attribute_id )
           end
-          # add_product_attr_combi( product_attr_id, qty_attr_id )
-          #debugger
-          vsku = @product_name + (@product_names[@product_name]).to_s
 
+          vsku = @product_name + (@product_names[@product_name]).to_s
           add_variant( product, vsku, option_values, @sheet1[i,1].to_i )
           @product_names[@product_name] = @product_names[@product_name] + 1
         end
@@ -818,8 +729,8 @@ class Spree::SS_Import
     end
 
     def add_variant( product, sku, option_values, price )
-      #debugger
-      #v = Spree::Variant.new( price: "202")
+
+      # if variant exists, update it
       v = Spree::Variant.where("sku = ?", sku).first
       if v
         if (v.option_values != option_values) || (v.price != price)
@@ -827,7 +738,7 @@ class Spree::SS_Import
           v.price = price
           v.save
         end
-      else
+      else # otherwise make a new variant
         v = Spree::Variant.new(
             :sku => sku,
             :cost_currency => "AUD",

@@ -10,7 +10,6 @@ Spree::ProductsController.class_eval do
     @combi = Array.new   
     sp_variants.each do |v|
       values = v.option_values.joins(:option_type).order("#{Spree::OptionType.table_name}.position asc")
-
       variant_options_hash = Hash.new
       values.map do |ov|
         variant_options_hash[ov.option_type.presentation] = ov.presentation
@@ -21,12 +20,15 @@ Spree::ProductsController.class_eval do
       variant_options_hash['id'] = v.id
       
       @combi << variant_options_hash
+          
     end
     # Rails.logger.debug( "DEBUG: @combi = #{@combi}" )
     
+    #@combi = @combi.sort{ |a1, a2| a1["Qty"].to_i <=> a2["Qty"].to_i }
+    
     # Pass combination data to js via gon
     gon.combi = @combi
-
+    
     referer = request.env['HTTP_REFERER']
     if referer
       begin
@@ -64,6 +66,13 @@ Spree::ProductsController.class_eval do
             end
         
             values << value unless found
+            
+            if name == "Qty"
+              values = values.sort{ |a1,a2| a1.to_i <=> a2.to_i }
+            else
+              values = values.sort{ |a1,a2| a1 <=> a2 }
+            end
+            
             option[:values] = values
             return
           end

@@ -6,4 +6,4 @@ en:
   import_products: 'Import products'
   import_button: 'Import'
   import_error: 'Error in imporint file'
-  import_success: '%{count} item(s) imported'
+  import_success: '%{message}'

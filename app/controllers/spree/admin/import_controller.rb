@@ -19,7 +19,7 @@ class Spree::Admin::ImportController < Spree::Admin::BaseController
     respond_to do |format|
       format.html do
         if import_result
-          redirect_to admin_products_path, notice: t(:import_success, :count => import_result)
+          redirect_to admin_products_path, notice: t(:import_success, :message => import_result)
         else
           redirect_to admin_products_path, flash: { error: t(:import_error) }
         end
