@@ -1,0 +1,9 @@
+<%= form_tag(admin_import_new_path, multipart: true, remote: false) do %>
+    <fieldset>
+      <legend align="center"><%= t(:import_products) %></legend>
+      <div class="field">
+        <%= file_field_tag 'file' %>
+      </div>
+      <%= submit_tag t(:import_button) %>
+    </fieldset>
+<% end %>
