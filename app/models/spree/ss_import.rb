@@ -507,43 +507,41 @@ class Spree::SS_Import
     def import_file(file)
 
       result = false
-      begin
-        @book = Spreadsheet.open file
-    
-        only_do_product = "Calendars"
-        if only_do_product != nil
-          @@combi_data = @@combi_data.find_all{|item| item[4] == only_do_product }
-        end
-                  
-        # get list of products
-        @product_names = Hash.new
-        @@combi_data.each do |combi|
-          @product_names[ combi[4] ] = 1
-        end
-        
-        # Generate the combinations
-        @@combi_data.each do |combi|
-          @sheet1 = @book.worksheet combi[0]
-          if @sheet1 == nil
-            abort( "Error: worksheet '#{combi[0]}' not found")
-          end
-          
-          @table_id = combi[1]
-          @min_qty = combi[2]
-          @max_qty = combi[3]
-          @product_name = combi[4]
-          @combi_map = combi[5]
-        
-          make_combi
-        end
-
-        sort_option_values
-        
-        result = "Import successful! " + @products_created + " products created, " + @variants_created + " variants created."
-        return result
-      rescue
-        return false
+      @products_created = 0
+      @variants_created = 0
+      @book = Spreadsheet.open file
+  
+      only_do_product = "Calendars"
+      if only_do_product != nil
+        @@combi_data = @@combi_data.find_all{|item| item[4] == only_do_product }
       end
+                
+      # get list of products
+      @product_names = Hash.new
+      @@combi_data.each do |combi|
+        @product_names[ combi[4] ] = 1
+      end
+      
+      # Generate the combinations
+      @@combi_data.each do |combi|
+        @sheet1 = @book.worksheet combi[0]
+        if @sheet1 == nil
+          abort( "Error: worksheet '#{combi[0]}' not found")
+        end
+        
+        @table_id = combi[1]
+        @min_qty = combi[2]
+        @max_qty = combi[3]
+        @product_name = combi[4]
+        @combi_map = combi[5]
+      
+        make_combi
+      end
+
+      sort_option_values
+      
+      result = "Import successful! " + @products_created.to_s + " products and " + @variants_created.to_s + " variants created."
+      return result
     end
 
     def sort_option_values
@@ -566,41 +564,16 @@ class Spree::SS_Import
           pos = pos + 1
         end     
       end      
-      # # sort quantities
-      # q = "SELECT name, ps_attribute.id_attribute
-      #     FROM ps_attribute 
-      #     JOIN ps_attribute_lang 
-      #     ON ps_attribute.id_attribute = ps_attribute_lang.id_attribute
-      #     WHERE id_attribute_group = #{group_id}
-      #     "
-      #   
-      # my_hash = Hash.new
-      # rs = @con.query( q )
-      # rs.each_hash do |row|
-      #    my_hash[row['id_attribute']] = row['name'].to_i
-      # end      
-      # # puts "my hash : #{my_hash}"
-      # my_hash = my_hash.sort_by { |k, v| v }
-      # # puts "my hash sorted: #{my_hash}"
-      # # write position values
-      # pos = 0;
-      # my_hash.each do |key, value|
-      #   # puts "#{key} , #{value.to_i}"
-      #   q = "UPDATE ps_attribute SET position = #{pos} WHERE id_attribute = #{key}"
-      #   # puts "Query #{q}"
-      #   @con.query( q )
-      #   pos = pos + 1
-      # end     
-    end
+   end
     
     def add_product( name )
       price = "10"
       sku = name
 
-
       product = Spree::Product.where( :name => name).first
       #debugger
       if product == nil
+        @products_created = @products_created + 1
         product = Spree::Product.new()
 
         product.sku = sku
@@ -724,12 +697,13 @@ class Spree::SS_Import
         option_type.save
       end
 
-      product.option_types << option_type
+      product.option_types << option_type unless product.option_types.include?(option_type)
       option_value
     end
 
     def add_variant( product, sku, option_values, price )
-
+      @variants_created = @variants_created + 1
+      
       # if variant exists, update it
       v = Spree::Variant.where("sku = ?", sku).first
       if v
